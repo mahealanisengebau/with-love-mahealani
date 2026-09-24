@@ -1,0 +1,427 @@
+
+/* GENERAL PAGE */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #20152D;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+}
+
+
+/* TWO COLUMN LAYOUT */
+
+.homepage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+
+/* LEFT SIDE */
+
+.left-side {
+    background-color: #20152D;
+    padding: 70px 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.left-side h1 {
+    color: #F0E5FA;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.left-side > p {
+    color: #D8CBE6;
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 500px;
+}
+
+
+/* MUSIC CARD */
+
+.music-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #362344;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.music-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.music-info {
+    text-align: left;
+}
+
+.music-info h3 {
+    margin: 0;
+    color: #FFFFFF;
+}
+
+.music-info p {
+    margin: 5px 0 10px;
+    color: #D8CBE6;
+}
+
+
+/* ABOUT ME */
+
+.about {
+    background-color: #362344;
+    padding: 25px;
+    margin-top: 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.about img {
+    width: 150px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.about-text {
+    text-align: left;
+}
+
+.about-text h2 {
+    color: #F0E5FA;
+}
+
+.about-text p {
+    color: #D8CBE6;
+}
+
+
+/* RIGHT SIDE */
+
+.right-side {
+    background-color: #F1E9FA;
+    color: #291A38;
+
+    padding: 70px 55px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* RIGHT SIDE PHOTO BACKGROUND */
+
+.right-side::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0;
+
+    transition: opacity 0.5s ease;
+
+    z-index: 0;
+}
+
+/* KEEP RIGHT SIDE CONTENT ABOVE PHOTO */
+
+.right-side > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* CHANGE RIGHT SIDE PHOTO WHEN HOVERING */
+
+.right-side:has(nav a:nth-child(1):hover)::before {
+    background-image: url("home.jpg");
+    opacity: 0.35;
+}
+
+.right-side:has(nav a:nth-child(2):hover)::before {
+    background-image: url("clouds.jpg");
+    opacity: 0.35;
+}
+
+.right-side:has(nav a:nth-child(3):hover)::before {
+    background-image: url("mypeople.jpg");
+    opacity: 0.35;
+}
+
+.welcome {
+    background-color: transparent;
+
+    padding: 0;
+    margin: 0 0 45px;
+
+    border-radius: 0;
+
+    max-width: 350px;
+}
+
+.welcome h2 {
+    font-family: Georgia, serif;
+    font-size: 44px;
+    font-style: italic;
+    font-weight: normal;
+
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    color: #291A38;
+}
+
+.welcome p {
+    color: #6D5A7C;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.garden-link {
+    color: #C9A3D8;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.3s ease;
+}
+
+.garden-link:hover {
+    color: #FFFBEF;
+}
+/* NAVIGATION */
+
+nav {
+    margin: 30px 0;
+    width: 100%;
+    max-width: 300px;
+}
+
+
+/* PHOTO HOVER NAVIGATION */
+
+nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background-color: #E2D0F0;
+    color: #4B3062;
+
+    text-decoration: none;
+    padding: 25px 20px;
+    margin: 15px 0;
+
+    border-radius: 0;
+
+    font-weight: normal;
+    font-size: 15px;
+
+    max-width: 320px;
+    min-height: 85px;
+
+    transition: color 0.4s ease,
+                background-color 0.4s ease;
+}
+
+/* PHOTO FOR EACH BUTTON */
+
+nav a:nth-child(1)::before {
+    background-image: url("home.jpg");
+}
+
+nav a:nth-child(2)::before {
+    background-image: url("clouds.jpg");
+}
+
+nav a:nth-child(3)::before {
+    background-image: url("mypeople.jpg");
+}
+
+
+/* PHOTO LAYER */
+
+nav a::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0;
+
+    transition: opacity 0.5s ease;
+}
+
+
+/* SHOW PHOTO WHEN HOVERING */
+
+nav a:hover::before,
+nav a:focus-visible::before {
+    opacity: 0.65;
+}
+
+
+/* KEEP TEXT ABOVE PHOTO */
+
+nav a {
+    isolation: isolate;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-color: rgba(40, 20, 55, 0.15);
+
+    z-index: -1;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: #FFFFFF;
+}
+
+
+/* PHOTO LAYER */
+
+nav a::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0;
+
+    transition: opacity 0.5s ease;
+}
+
+
+/* SHOW PHOTO WHEN HOVERING */
+
+nav a:hover::before,
+nav a:focus-visible::before {
+    opacity: 0.65;
+}
+
+
+/* KEEP TEXT ABOVE PHOTO */
+
+nav a {
+    isolation: isolate;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-color: rgba(40, 20, 55, 0.15);
+
+    z-index: -1;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: #FFFFFF;
+}
+
+
+nav a:hover {
+    background-color: #C9A3D8;
+}
+
+
+/* MOBILE DESIGN */
+
+@media (max-width: 700px) {
+
+    .homepage {
+        grid-template-columns: 1fr;
+    }
+
+    .left-side,
+    .right-side {
+        padding: 30px;
+    }
+
+    .left-side h1 {
+        font-size: 32px;
+    }
+
+    .music-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+/* SMOOTH PAGE FADE IN */
+
+body {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* FOOTER */
+
+footer {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    width: 47%;
+    text-align: center;
+    color: #6D5A7C;
+    font-size: 13px;
+}

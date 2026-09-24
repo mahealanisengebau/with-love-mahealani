@@ -1,0 +1,96 @@
+/* GENERAL PAGE */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("IMG_0015.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: #FFFBEF;
+}
+
+
+/* INTRO PAGE */
+
+.intro-page {
+    min-height: 100vh;
+    background-color: rgba(61, 29, 78, 0.65);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 40px 20px;
+
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+
+/* TITLE */
+
+.intro-page h1 {
+    font-family: Georgia, serif;
+    font-size: 64px;
+    font-weight: normal;
+    line-height: 1.1;
+    margin: 0 0 35px;
+    color: #FFFBEF;
+}
+
+
+/* DESCRIPTION */
+
+.intro-page p {
+    font-size: 16px;
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+
+/* ENTER BUTTON */
+
+.enter-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 55px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        90deg,
+        #7068F5,
+        #ED62C4
+    );
+
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.enter-button:hover {
+    opacity: 0.85;
+}
+
+
+/* PAGE TRANSITION */
+
+.intro-page.fade-out {
+    opacity: 0;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    color: #C9A3D8;
+    font-size: 13px;
+    padding: 25px 0;
+}
